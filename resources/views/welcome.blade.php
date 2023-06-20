@@ -30,5 +30,7 @@ Bezz
         <span class="mx-3">-</span>
         <span>Portfolio</span>
     </div>
+
+    <a href="{{ route('guestPortfolio') }}" class="btn btn-outline-light mt-3">Go to Portfolio</a>
 </div>
 @endsection

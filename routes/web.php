@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Guest\GuestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,8 @@ use App\Http\Controllers\Admin\AdminController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/portfolio', [GuestController::class, 'index'])->name('guestPortfolio');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
