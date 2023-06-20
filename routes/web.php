@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Guest\GuestController;
 
+use App\Http\Controllers\ProjectController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//guest
 Route::get('/portfolio', [GuestController::class, 'index'])->name('guestPortfolio');
 
 // Route::get('/dashboard', function () {
@@ -40,6 +42,8 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    //rotte admin
+    Route::resource('/project', ProjectController::class);
 });
 
 require __DIR__.'/auth.php';
