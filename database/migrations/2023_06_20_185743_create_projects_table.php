@@ -18,10 +18,11 @@ return new class extends Migration
 
             $table->string('title');
             $table->text('description');
-            // $table->text('thumb');
             $table->string('buyer');
             $table->date('project_date');
             $table->string('programming_languages');
+            $table->text('link');
+
 
             $table->timestamps();
         });

@@ -19,10 +19,10 @@ class ProjectSeeder extends Seeder
         $newProject = new Project();
         $newProject->title = 'Boolflix';
         $newProject->description = 'Replica del layout di Netflix con implementazione della ricerca dei film';
-        // $newProject->thumb = ;
         $newProject->buyer = 'ME';
         $newProject->project_date = '2023-05-12';
         $newProject->programming_languages = 'Vue Js';
+        $newProject->link = 'https://github.com/Antonio-Ribezzo/vite-boolflix';
 
         $newProject->save();
     }
