@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form action="{{route('admin.project.store')}}" method="POST">
+                <form action="{{route('admin.project.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     {{-- da aggiungere l'old quando si sbaglia a compilare il form per non reinserire i dati di nuovo --}}
@@ -24,6 +24,10 @@
                     {{-- project buyer --}}
                     <label for="buyer" class="form-label">Project buyer</label>
                     <input type="text" class="form-control mb-4 @error('buyer') is-invalid @enderror" id="buyer" name="buyer" max="25" required>
+
+                    {{-- cover image --}}
+                    <label for="cover_image" class="form-label">Cover Image</label>
+                    <input type="file" class="form-control mb-4 @error('cover_image') is-invalid @enderror" id="cover_image" name="cover_image" required>
                     
                     {{-- project date --}}
                     <label for="project_date" class="form-label">Project Date</label>

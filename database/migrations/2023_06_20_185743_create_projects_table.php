@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('buyer');
+            $table->string('cover_image');
             $table->date('project_date');
             $table->string('programming_languages');
             $table->text('link');

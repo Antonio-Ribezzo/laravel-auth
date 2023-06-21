@@ -29,7 +29,7 @@
     @vite(['resources/js/app.js'])
 </head>
 
-<body>
+<body class="pb-5">
     <div id="app">
         <nav class="navbar navbar-expand-md">
             <div class="container">

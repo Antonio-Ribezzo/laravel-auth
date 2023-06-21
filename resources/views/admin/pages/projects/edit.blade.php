@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form action="{{route('admin.project.update', $project)}}" method="POST">
+                <form action="{{route('admin.project.update', $project)}}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     @method('PUT')
@@ -26,6 +26,10 @@
                     {{-- project buyer --}}
                     <label for="buyer" class="form-label">Project buyer</label>
                     <input type="text" class="form-control mb-4 @error('buyer') is-invalid @enderror" id="buyer" name="buyer" max="25" required value="{{ old('buyer') ?? $project->buyer }}">
+
+                    {{-- cover image --}}
+                    <label for="cover_image" class="form-label">Cover Image</label>
+                    <input type="file" class="form-control mb-4 @error('cover_image') is-invalid @enderror" id="cover_image" name="cover_image" required value="{{ old('cover_image') ?? $project->cover_image }}">
                     
                     {{-- project date --}}
                     <label for="project_date" class="form-label">Project Date</label>

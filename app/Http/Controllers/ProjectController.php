@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Storage;
+
 class ProjectController extends Controller
 {
     /**
@@ -40,7 +42,14 @@ class ProjectController extends Controller
         $form_data = $request->all();
 
         $newProject = new Project();
-        
+        // caricamneto dell'immagine se presente
+        if($request->hasFile('cover_image')){
+            //se esiste un file allora genero un path che mi indica dove verrà salvata l'immagine nel progetto
+            $path = Storage::disk('public')->put('projects_images', $request->cover_image);
+
+            $form_data['cover_image']= $path;
+        }
+
         $newProject->fill($form_data);
         // dd($newProject);
         $newProject->save();
@@ -80,6 +89,21 @@ class ProjectController extends Controller
     public function update(Request $request, Project $project)
     {
         $form_data = $request->all();
+
+        // caricamneto dell'immagine se presente
+        if($request->hasFile('cover_image')){
+            // se esiste un file
+            // cancello la precedente immagine nello storage
+            if($project->cover_image){
+                Storage::delete($project->cover_image);
+            }
+
+            //genero un path che mi indica dove verrà salvata l'immagine nel progetto
+            $path = Storage::disk('public')->put('projects_images', $request->cover_image);
+
+            $form_data['cover_image']= $path;
+
+        }
 
         $project->update($form_data);
 
