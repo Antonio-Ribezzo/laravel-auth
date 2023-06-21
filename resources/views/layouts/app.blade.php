@@ -11,7 +11,7 @@
     <title>@yield('title')</title>
 
     {{-- favicon --}}
-    <link rel="icon" type="image/x-icon" href="sfondo-trasparente-bezz.png">
+    <link rel="icon" type="image/x-icon" href="{{ asset('sfondo-trasparente-bezz.png') }}">
 
 
     <!-- Fonts -->
@@ -34,24 +34,32 @@
         <nav class="navbar navbar-expand-md">
             <div class="container">
 
+                {{-- logo --}}
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <div>
+                        <img src="{{ asset('sfondo-trasparente-bezz.png') }}" alt="logo-navbar" class="img-fluid" style="height:150px">
+                    </div>
+                </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
 
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                         </li>
                     </ul>
                     {{-- logo --}}
-                    <a class="navbar-brand mx-auto" href="{{ url('/') }}">
+                    {{-- <a class="navbar-brand mx-auto" href="{{ url('/') }}">
                         <div>
-                            <img src="sfondo-trasparente-bezz.png" alt="logo-navbar" class="img-fluid" style="height:150px">
+                            <img src="{{ asset('sfondo-trasparente-bezz.png') }}" alt="logo-navbar" class="img-fluid" style="height:150px">
                         </div>
-                    </a>
+                    </a> --}}
                     
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav">

@@ -43,7 +43,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     //rotte admin
-    Route::resource('/project', ProjectController::class);
+    Route::resource('/project', ProjectController::class)->parameters(['projects'=>'project:title']);
 });
 
 require __DIR__.'/auth.php';

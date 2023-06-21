@@ -2,14 +2,12 @@ nav{
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2rem;
     .container{
-        .collapse{
-            a{
-                div{
-                    img{
-                        opacity: 0.7;
-                        &:hover{
-                            opacity: 1;
-                        }
+        a{
+            div{
+                img{
+                    opacity: 0.7;
+                    &:hover{
+                        opacity: 1;
                     }
                 }
             }
