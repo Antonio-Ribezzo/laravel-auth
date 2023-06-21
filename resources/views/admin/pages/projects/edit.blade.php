@@ -13,7 +13,7 @@
 
                     {{-- project title --}}
                     <label for="title" class="form-label">Project Title</label>
-                    <input type="text" class="form-control mb-4 @error('title') is-invalid @enderror" id="title" name="title" max="25" required value="{{ old('title') ?? $project->title }}">
+                    <input type="text" class="form-control mb-4 @error('title') is-invalid @enderror" id="title" name="title" max="25" value="{{ old('title') ?? $project->title }}">
                     {{-- error --}}
                     {{-- @error('title')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -25,11 +25,11 @@
 
                     {{-- project buyer --}}
                     <label for="buyer" class="form-label">Project buyer</label>
-                    <input type="text" class="form-control mb-4 @error('buyer') is-invalid @enderror" id="buyer" name="buyer" max="25" required value="{{ old('buyer') ?? $project->buyer }}">
+                    <input type="text" class="form-control mb-4 @error('buyer') is-invalid @enderror" id="buyer" name="buyer" max="25" value="{{ old('buyer') ?? $project->buyer }}">
 
                     {{-- cover image --}}
                     <label for="cover_image" class="form-label">Cover Image</label>
-                    <input type="file" class="form-control mb-4 @error('cover_image') is-invalid @enderror" id="cover_image" name="cover_image" required value="{{ old('cover_image') ?? $project->cover_image }}">
+                    <input type="file" class="form-control mb-4 @error('cover_image') is-invalid @enderror" id="cover_image" name="cover_image" value="{{ old('cover_image') ?? $project->cover_image }}">
                     
                     {{-- project date --}}
                     <label for="project_date" class="form-label">Project Date</label>
@@ -37,7 +37,7 @@
 
                     {{-- programming languages --}}
                     <label for="programming_languages" class="form-label">Project programming_languages</label>
-                    <input type="text" class="form-control mb-4 @error('programming_languages') is-invalid @enderror" id="programming_languages" name="programming_languages" max="25" required value="{{ old('programming_languages') ?? $project->programming_languages }}">
+                    <input type="text" class="form-control mb-4 @error('programming_languages') is-invalid @enderror" id="programming_languages" name="programming_languages" max="25" value="{{ old('programming_languages') ?? $project->programming_languages }}">
 
                     {{-- project link --}}
                     <label for="link" class="form-label">Project Link</label>
