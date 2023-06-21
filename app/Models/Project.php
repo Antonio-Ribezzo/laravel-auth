@@ -9,4 +9,16 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
+
+    // Da mettere a seconda del nome della vostra tabella, per specificare da quale tabella state prendendo i dati
+    protected $table = 'projects';
+
+    protected $fillable = [
+        'title',
+        'description',
+        'buyer',
+        'project_date',
+        'programming_languages',
+        'link'
+    ];
 }

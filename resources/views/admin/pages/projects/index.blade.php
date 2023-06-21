@@ -1,7 +1,7 @@
 @extends ('layouts.app')
 
 @section('content')
-<div class='container'>
+<div class='container d-flex justify-content-between align-items-start flex-wrap mt-5'>
     @foreach ($projects as $key=>$el)
         <div class="card p-3" style="width: 18rem;">
             <div class="card-body">
