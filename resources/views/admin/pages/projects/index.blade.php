@@ -1,9 +1,9 @@
 @extends ('layouts.app')
 
 @section('content')
-<div class='container d-flex justify-content-between align-items-start flex-wrap mt-5'>
+<div class='container d-flex justify-content-start align-items-start flex-wrap mt-5'>
     @foreach ($projects as $key=>$el)
-        <div class="card p-3" style="width: 18rem;">
+        <div class="card p-3 mx-2" style="width: 18rem;">
             <img src="{{asset('storage/'. $el->cover_image)}}" class="card-img-top" alt="{{$el->title . 'cover'}}">
             <div class="card-body">
                 <h2 class="card-title mb-3 text-center">{{ $el->title }}</h2>

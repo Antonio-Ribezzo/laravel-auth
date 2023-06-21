@@ -1,7 +1,7 @@
 @extends ('layouts.app')
 
 @section('content')
-<div class='container d-flex flex-column align-items-center justify-content-center mt-5'>   
+<div class='container d-flex flex-column align-items-center justify-content-center mt-5 position-relative'>   
         <div class="card p-3">
             <img src="{{asset('storage/'. $project->cover_image)}}" class="card-img-top" alt="{{$project->title . 'cover'}}">
         </div>
@@ -19,5 +19,8 @@
                 <button class="btn btn-outline-danger" type="submit" onclick="return confirm('Are you sure you want to delete the project?')">Delete Project</button>
             </form>
         </div>
+        <a class="mt-2 btn btn-outline-light rounded-circle position-absolute" href="{{route('admin.project.index')}}" style="top:-4rem; left:10rem;">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
 </div>
 @endsection
