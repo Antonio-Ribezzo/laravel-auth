@@ -21,7 +21,7 @@
 
                     {{-- project description --}}
                     <label for="description" class="form-label">Project Description</label>
-                    <textarea class="form-control mb-4 @error('title') is-invalid @enderror" name="description" id="description" rows="3">{{ old('description') ?? $project->description }}</textarea>
+                    <textarea class="form-control mb-4 @error('description') is-invalid @enderror" name="description" id="description" rows="3">{{ old('description') ?? $project->description }}</textarea>
 
                     {{-- project buyer --}}
                     <label for="buyer" class="form-label">Project buyer</label>
